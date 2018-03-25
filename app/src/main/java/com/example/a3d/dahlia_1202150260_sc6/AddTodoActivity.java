@@ -12,7 +12,7 @@ import android.widget.Toast;
  * Created by 3D on 3/25/2018.
  */
 
-public class AddTodolistActivity extends AppCompatActivity {
+public class AddTodoActivity extends AppCompatActivity {
 
     //Deklarasi Variabel
     private EditText name, desc,priority;
@@ -51,7 +51,7 @@ public class AddTodolistActivity extends AppCompatActivity {
            db.insert(name.getText().toString().trim(), desc.getText().toString().trim(),priority.getText().toString().trim());
             blank();
             //intent untuk melanjutkan ke activity MainActivity
-            Intent i = new Intent(AddTodolistActivity.this,MainActivity.class);
+            Intent i = new Intent(AddTodoActivity.this,MainActivity.class);
             //Memulai aktivitas yang dideklarasikan sebelumnya
             startActivity(i);
         }

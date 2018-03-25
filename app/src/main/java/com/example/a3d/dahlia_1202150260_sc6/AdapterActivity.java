@@ -15,30 +15,30 @@ import java.util.List;
  * Created by 3D on 3/25/2018.
  */
 
-public class TodolistAdapter extends RecyclerView.Adapter<TodolistAdapter.TodoViewHolder> {
+public class AdapterActivity extends RecyclerView.Adapter<AdapterActivity.TodoViewHolder> {
 
     //Deklarasi variable yang akan digunakan
-    private List<Todolist> todoList;
+    private List<TodolistActivity> todoList;
     private Context context;
     int id;
 
-    //Konstruktor dari class TodolistAdapter
-    public TodolistAdapter(Context cont, List<Todolist> listTodo, int id){
+    //Konstruktor dari class AdapterActivity
+    public AdapterActivity(Context cont, List<TodolistActivity> listTodo, int id){
         this.todoList = listTodo;
         this.context = cont;
         this.id = id;
     }
 
     @Override
-    public TodolistAdapter.TodoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public AdapterActivity.TodoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_todo_list, parent, false);
         return new TodoViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(TodolistAdapter.TodoViewHolder holder, int position) {
+    public void onBindViewHolder(AdapterActivity.TodoViewHolder holder, int position) {
         // Mendapatkan elemen dari dataset kemudian engganti isi tampilan dengan elemen itu
-        Todolist todo = todoList.get(position);
+        TodolistActivity todo = todoList.get(position);
         holder.name.setText(todo.getName());
         holder.desc.setText(todo.getDesc());
         holder.priority.setText(todo.getPriority());
@@ -74,7 +74,7 @@ public class TodolistAdapter extends RecyclerView.Adapter<TodolistAdapter.TodoVi
             name  = itemView.findViewById(R.id.name);
             desc   = itemView.findViewById(R.id.desc);
             priority   = itemView.findViewById(R.id.priority);
-            cd = itemView.findViewById(R.id.card_view);
+            cd = itemView.findViewById(R.id.cardview);
         }
     }
 }
