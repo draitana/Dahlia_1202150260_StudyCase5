@@ -29,7 +29,7 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         setTitle("Settings");
 
-        //Membuat alert dialog bernama alert
+        //Membuat alert dialog
         alert = new AlertDialog.Builder(this);
 
         //Melakukan inisiasi shared preference
@@ -44,22 +44,21 @@ public class SettingsActivity extends AppCompatActivity {
         shapecolor.setText(getShapeColor(colorid));
     }
 
-    //Apabila tombol back diklik
+    //Ketika klick tombol back
     @Override
     public void onBackPressed() {
-        //Apabila tombol back di klik akan intent ke aktivitas selanjutnya yaitu MainActivity
+        //ketika klik tombol back akan intent ke MainActivity
         Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
-        //Start aktivitas berdasarkan intentyang sudah dideklarasikan
         startActivity(intent);
         //Menutup aktivitas setelah intent di jalankan
         finish();
     }
 
-    //Method yang dijalankan ketika pilihan pada menu dipilih
+    //Method yang dijalankan ketika memilih pilihan pada menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==android.R.id.home){
-            //Menjalankan method onbackpressed
+            //running method onbackpressed
             this.onBackPressed();
         }
         return true;

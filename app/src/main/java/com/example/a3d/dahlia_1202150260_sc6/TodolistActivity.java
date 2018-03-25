@@ -4,14 +4,14 @@ package com.example.a3d.dahlia_1202150260_sc6;
  * Created by 3D on 3/25/2018.
  */
 
-public class Todolist {
+public class TodolistActivity {
 
     //Deklarasi variable
     String id;
     private String name, desc, priority;
 
-    //Konstruktor dari class Todolist
-    public Todolist() {
+    //Konstruktor dari class TodolistActivity
+    public TodolistActivity() {
         this.id = id;
         this.name = name;
         this.desc = desc;

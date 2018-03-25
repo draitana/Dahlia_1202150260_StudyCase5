@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView rv;
     private SQLiteDatabase db;
     private Database dataHelper;
-    private List<Todolist> todoList;
-    TodolistAdapter userAdapter;
+    private List<TodolistActivity> todoList;
+    AdapterActivity userAdapter;
     protected RecyclerView.LayoutManager LayoutManager;
 
     public static final String ID = "id";
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         int color = sharedP.getInt("Colourground", R.color.white);
 
         //Membuat adapter baru
-        userAdapter = new TodolistAdapter(this, todoList, color);
+        userAdapter = new AdapterActivity (this, todoList, color);
         //Mendefinisikan Linear Layout yang digunkan pada Recycler View
         LayoutManager = new LinearLayoutManager (this);
         //melakukan set et Linear Layout
@@ -73,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //ketika fab diklik maka akan menjalankan intent ke AddTodolistActivity
-                Intent i = new Intent(MainActivity.this,AddTodolistActivity.class);
+                //ketika fab diklik maka akan menjalankan intent ke AddTodoActivity
+                Intent i = new Intent(MainActivity.this,AddTodoActivity.class);
                 //memulai aktivitas berdasarkan intent a yang sudah dideklarasikan
                 startActivity(i);
             }
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             //Method onSwiped pada recycler view
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                 final int position = viewHolder.getAdapterPosition();
-                TodolistAdapter adapter = (TodolistAdapter) rv.getAdapter();
+                AdapterActivity adapter = (AdapterActivity) rv.getAdapter();
 
                 dataHelper.delete(Integer.parseInt(todoList.get(position).getId()));
 
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             String desc = row.get(i).get(DESC);
             String priority = row.get(i).get(PRIORITY);
 
-            Todolist data = new Todolist();
+            TodolistActivity data = new TodolistActivity ();
 
             //Set data berdasarkan data yang di get
             data.setId(id);
